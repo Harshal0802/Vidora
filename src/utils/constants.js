@@ -1,0 +1,406 @@
+const GOOGLE_API_KEY = "AIzaSyAVemDmeJuvZJJ0D5Os2nwn0zbXH6IX6vo";
+export const YOUTUBE_VIDEOS_API =
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=" +
+  GOOGLE_API_KEY;
+
+// export const YOUTUBE_DUMMY_DATA = {
+//   kind: "youtube#videoListResponse",
+//   etag: "A8aC-jjtEFiWJJiVIxPI90MVM5M",
+//   items: [
+//     {
+//       kind: "youtube#video",
+//       etag: "YndlixlEA8F6rCsMonk9Ks2W23M",
+//       id: "Tk9TM7-eTmw",
+//       snippet: {
+//         publishedAt: "2026-09-14T17:00:05Z",
+//         channelId: "UCDE5Ezmxq1bNVak4lmkpCMw",
+//         title: 'Falling In Reverse - "Joseph"',
+//         description:
+//           "\"Joseph\" by @FallingInReverse \nStream & download: https://fallinginreverse.ffm.to/joseph \n\nProduced by Ronnie Radke & Tyler Smyth\nMixed and mastered by Tyler Smyth\nVocal producer: Charles Massabo\nVocals mixed by Charles Massabo\nWritten by Ronnie Radke, Jason Richardson, Daniel Laskiewicz, & Luke Holland\n\nCREW\n\nDirector: Jensen Noen\nProducers: Phoenix Vaughn & Ruth Devereaux & Ashley Haines\nProduction Company: Blesscode Entertainment\nDirector of Photography: Powell Robinson\nProduction Designer: Christina Giddens Garcia\nVFX: Inception Post & TiltVFX\nInception Post Lead VFX Artist: Alex Verenchyck\nInception Post Creative Director: Jensen Noen\nEditing by: Jensen Noen\nAssistant Editor: Vasyl Liubka\nColorist: Matt Osborne of Company 3\nProduction Software: Powered by MasterShot\nStunt Coordinator: Jackson Spidell\nCostume Designer: Dani Rush\nBand Stylist: Candice Lambert\nMakeup Designer: Alisha Baijounas\nHMU Designer (Performance): Emilia Werynska\nKey Stunt Rigger: Beni Alexander\nSPFX Coordinators: Matt Guthrie & Mark Noel\n1st AD: Kendall Foote\nCLT: Nate Thomson\nKey Grip: John Miller\nTechnocrane Op: Eli Franks\n\nLYRICS\n\nThey say we’re all going to hell for eternity \nWhile they drop their bombs on us from their war machines \nAre you ready to die? \nAre you ready to bleed for me? \nAnd now we’re out of time \n\nThere is nothing better \nThan the feeling of forever \nWhen your body decomposes \nAnd lighter than a feather \nAnd you pray\n“I don’t wanna go”\nHe don’t wanna die \nI don’t wanna go to heaven \nI don’t wanna see the light \n\n(Welcome to end of the road you fucking degenerate pieces of shit) \n\nFuck the world with loaded gun \nShots ring out everybody better duck \nBlame it on bad luck \n(Do do do)\nWatch the bodies drop \nNow you're own your own \nIt’s social suicide  \nBreaking down the walls \n\nStand tall my friend we will meet again \nYou were meant to live for so much more \n\nI’m so sick and tired of the way we’re livin'\nWe’re bombing schools just to build a prison \nShoot to kill in a crowded lot \nOne by one till the bodies drop \nNow you're own your own \nThis bullet knows your name \nBreaking down the walls \nAnd you cannot escape your fate \n\nSo what the fuck are you gonna do?\n\nWar, pride \nBlood was spilled \nGenocide \nHope \nAll gone \nBut no matter what it is not enough for them \n\nRepeat the cycle \nBless the martyr \nLove thy neighbor \nKill your father \nRepeat the cycle \nKill your idols \nLove thy neighbor \nRepeat the cycle now\n\nFOLLOW FALLING IN REVERSE\n▶ Store: https://fallinginreverse.ffm.to/store\n▶ Website: https://fallinginreverse.com/\n▶ Instagram: http://instagram.com/fallinginreverse\n▶ TikTok: https://www.tiktok.com/@fallinginreverse\n▶ Facebook: https://www.facebook.com/fallinginreverseofficial\n▶ X: https://x.com/FIROfficial\n▶ YouTube: https://youtube.com/@FallingInReverse\n▶ Spotify: https://spoti.fi/3HeKLgc\n▶ Apple: https://apple.co/3uUNHLt\n▶ Amazon: https://amzn.to/3pzVPOf\n______________________\n\nEpitaph Records is an artist-first indie label founded in Los Angeles by Bad Religion guitarist, Brett Gurewitz.  Early releases from a variety of punk heavyweights helped launch the 90s punk explosion.  Along the way, Epitaph has grown and evolved creatively while sticking to its mission of helping real artists make great recordings on their own terms.\n\nFOLLOW EPITAPH RECORDS\n▶ Website: https://www.epitaph.com \n▶ Instagram: https://instagram.com/epitaphrecords\n▶ Facebook: https://facebook.com/epitaphrecords\n▶ Twitter: https://twitter.com/epitaphrecords\n▶ TikTok: https://tiktok.com/@epitaphrecords\n▶ Spotify: https://spoti.fi/3p6o4E5 \n▶ Apple: https://apple.co/3GR6wSy\n▶ Store: https://epitaph.ffm.to/store\n\n#fallinginreverse #joseph #epitaph",
+//         thumbnails: {
+//           default: {
+//             url: "https://i.ytimg.com/vi/Tk9TM7-eTmw/default.jpg",
+//             width: 120,
+//             height: 90,
+//           },
+//           medium: {
+//             url: "https://i.ytimg.com/vi/Tk9TM7-eTmw/mqdefault.jpg",
+//             width: 320,
+//             height: 180,
+//           },
+//           high: {
+//             url: "https://i.ytimg.com/vi/Tk9TM7-eTmw/hqdefault.jpg",
+//             width: 480,
+//             height: 360,
+//           },
+//           standard: {
+//             url: "https://i.ytimg.com/vi/Tk9TM7-eTmw/sddefault.jpg",
+//             width: 640,
+//             height: 480,
+//           },
+//           maxres: {
+//             url: "https://i.ytimg.com/vi/Tk9TM7-eTmw/maxresdefault.jpg",
+//             width: 1280,
+//             height: 720,
+//           },
+//           fhd: {
+//             url: "https://i.ytimg.com/vi/Tk9TM7-eTmw/fhddefault.jpg",
+//             width: 1920,
+//             height: 1080,
+//           },
+//         },
+//         channelTitle: "Epitaph Records",
+//         tags: [
+//           "epitaph",
+//           "epitaph records",
+//           "rock",
+//           "alternative",
+//           "indie",
+//           "punk",
+//           "metal",
+//           "falling in reverse",
+//           "joseph",
+//           "falling in reverse joseph",
+//           "joseph official video",
+//           "joseph official audio",
+//           "falling in reverse official video",
+//           "falling in reverse official audio",
+//           "falling in reverse new song",
+//           "falling in reverse new video",
+//           "falling in reverse 2026",
+//           "ronnie radke",
+//         ],
+//         categoryId: "10",
+//         liveBroadcastContent: "none",
+//         defaultLanguage: "en",
+//         localized: {
+//           title: 'Falling In Reverse - "Joseph"',
+//           description:
+//             "\"Joseph\" by @FallingInReverse \nStream & download: https://fallinginreverse.ffm.to/joseph \n\nProduced by Ronnie Radke & Tyler Smyth\nMixed and mastered by Tyler Smyth\nVocal producer: Charles Massabo\nVocals mixed by Charles Massabo\nWritten by Ronnie Radke, Jason Richardson, Daniel Laskiewicz, & Luke Holland\n\nCREW\n\nDirector: Jensen Noen\nProducers: Phoenix Vaughn & Ruth Devereaux & Ashley Haines\nProduction Company: Blesscode Entertainment\nDirector of Photography: Powell Robinson\nProduction Designer: Christina Giddens Garcia\nVFX: Inception Post & TiltVFX\nInception Post Lead VFX Artist: Alex Verenchyck\nInception Post Creative Director: Jensen Noen\nEditing by: Jensen Noen\nAssistant Editor: Vasyl Liubka\nColorist: Matt Osborne of Company 3\nProduction Software: Powered by MasterShot\nStunt Coordinator: Jackson Spidell\nCostume Designer: Dani Rush\nBand Stylist: Candice Lambert\nMakeup Designer: Alisha Baijounas\nHMU Designer (Performance): Emilia Werynska\nKey Stunt Rigger: Beni Alexander\nSPFX Coordinators: Matt Guthrie & Mark Noel\n1st AD: Kendall Foote\nCLT: Nate Thomson\nKey Grip: John Miller\nTechnocrane Op: Eli Franks\n\nLYRICS\n\nThey say we’re all going to hell for eternity \nWhile they drop their bombs on us from their war machines \nAre you ready to die? \nAre you ready to bleed for me? \nAnd now we’re out of time \n\nThere is nothing better \nThan the feeling of forever \nWhen your body decomposes \nAnd lighter than a feather \nAnd you pray\n“I don’t wanna go”\nHe don’t wanna die \nI don’t wanna go to heaven \nI don’t wanna see the light \n\n(Welcome to end of the road you fucking degenerate pieces of shit) \n\nFuck the world with loaded gun \nShots ring out everybody better duck \nBlame it on bad luck \n(Do do do)\nWatch the bodies drop \nNow you're own your own \nIt’s social suicide  \nBreaking down the walls \n\nStand tall my friend we will meet again \nYou were meant to live for so much more \n\nI’m so sick and tired of the way we’re livin'\nWe’re bombing schools just to build a prison \nShoot to kill in a crowded lot \nOne by one till the bodies drop \nNow you're own your own \nThis bullet knows your name \nBreaking down the walls \nAnd you cannot escape your fate \n\nSo what the fuck are you gonna do?\n\nWar, pride \nBlood was spilled \nGenocide \nHope \nAll gone \nBut no matter what it is not enough for them \n\nRepeat the cycle \nBless the martyr \nLove thy neighbor \nKill your father \nRepeat the cycle \nKill your idols \nLove thy neighbor \nRepeat the cycle now\n\nFOLLOW FALLING IN REVERSE\n▶ Store: https://fallinginreverse.ffm.to/store\n▶ Website: https://fallinginreverse.com/\n▶ Instagram: http://instagram.com/fallinginreverse\n▶ TikTok: https://www.tiktok.com/@fallinginreverse\n▶ Facebook: https://www.facebook.com/fallinginreverseofficial\n▶ X: https://x.com/FIROfficial\n▶ YouTube: https://youtube.com/@FallingInReverse\n▶ Spotify: https://spoti.fi/3HeKLgc\n▶ Apple: https://apple.co/3uUNHLt\n▶ Amazon: https://amzn.to/3pzVPOf\n______________________\n\nEpitaph Records is an artist-first indie label founded in Los Angeles by Bad Religion guitarist, Brett Gurewitz.  Early releases from a variety of punk heavyweights helped launch the 90s punk explosion.  Along the way, Epitaph has grown and evolved creatively while sticking to its mission of helping real artists make great recordings on their own terms.\n\nFOLLOW EPITAPH RECORDS\n▶ Website: https://www.epitaph.com \n▶ Instagram: https://instagram.com/epitaphrecords\n▶ Facebook: https://facebook.com/epitaphrecords\n▶ Twitter: https://twitter.com/epitaphrecords\n▶ TikTok: https://tiktok.com/@epitaphrecords\n▶ Spotify: https://spoti.fi/3p6o4E5 \n▶ Apple: https://apple.co/3GR6wSy\n▶ Store: https://epitaph.ffm.to/store\n\n#fallinginreverse #joseph #epitaph",
+//         },
+//         defaultAudioLanguage: "en",
+//       },
+//       contentDetails: {
+//         duration: "PT4M18S",
+//         dimension: "2d",
+//         definition: "hd",
+//         caption: "true",
+//         licensedContent: true,
+//         contentRating: {},
+//         projection: "rectangular",
+//       },
+//       statistics: {
+//         viewCount: "2612578",
+//         likeCount: "231481",
+//         favoriteCount: "0",
+//         commentCount: "14429",
+//       },
+//     },
+//     {
+//       kind: "youtube#video",
+//       etag: "BhkxIjCOcS_L3HrfDzp0e53-XG0",
+//       id: "pvm5gvobL5w",
+//       snippet: {
+//         publishedAt: "2026-09-14T23:00:06Z",
+//         channelId: "UCd6srH79H1XhtrJNRm5WorQ",
+//         title: "Transformers: Rise of Unicron - New Official Teaser",
+//         description:
+//           '"Whenever you look to the stars, think of one of them... as my soul".\n-Optimus Prime.\n\nWe\'re going to miss you, Peter. \n\n\n\n► SUBSCRIBE to the Rise of Unicron channel to get notified when new videos are posted: @transformersriseofunicron \n\n► SUBSCRIBE to the Manolikas Studios channel for bonus content regarding the fan-film: @manolikasstudios \n\nFollow us on social media to get the latest news and announcements regarding the Transformers: Rise of Unicron fan-film.\n\nInstagram (RoU): https://www.instagram.com/tf_rise_of_unicron.official\nInstagram (MS): https://www.instagram.com/manolikas_studios\nTikTok: https://www.tiktok.com/@tfriseofunicron',
+//         thumbnails: {
+//           default: {
+//             url: "https://i.ytimg.com/vi/pvm5gvobL5w/default.jpg",
+//             width: 120,
+//             height: 90,
+//           },
+//           medium: {
+//             url: "https://i.ytimg.com/vi/pvm5gvobL5w/mqdefault.jpg",
+//             width: 320,
+//             height: 180,
+//           },
+//           high: {
+//             url: "https://i.ytimg.com/vi/pvm5gvobL5w/hqdefault.jpg",
+//             width: 480,
+//             height: 360,
+//           },
+//           standard: {
+//             url: "https://i.ytimg.com/vi/pvm5gvobL5w/sddefault.jpg",
+//             width: 640,
+//             height: 480,
+//           },
+//           maxres: {
+//             url: "https://i.ytimg.com/vi/pvm5gvobL5w/maxresdefault.jpg",
+//             width: 1280,
+//             height: 720,
+//           },
+//           uhd: {
+//             url: "https://i.ytimg.com/vi/pvm5gvobL5w/uhddefault.jpg",
+//             width: 3840,
+//             height: 2160,
+//           },
+//         },
+//         channelTitle: "Transformers: Rise of Unicron",
+//         tags: [
+//           "Transformers",
+//           "Rise of Unicron",
+//           "Transformers fan film",
+//           "teaser trailer",
+//           "Optimus Prime",
+//           "Bumblebee",
+//           "Unicron",
+//           "Megatron",
+//           "Cliffjumper",
+//           "Autobots",
+//           "Decepticons",
+//           "Blender",
+//           "Blender animation",
+//           "Blender 3D",
+//           "3D animation",
+//           "CGI",
+//           "VFX",
+//           "visual effects",
+//           "cinematic animation",
+//           "science fiction",
+//           "fan film",
+//           "Transformers Rise of Unicron",
+//           "Michael Bay",
+//           "Bayhem",
+//           "H&F Productions",
+//           "Manolikas Studios",
+//           "Bayverse",
+//         ],
+//         categoryId: "1",
+//         liveBroadcastContent: "none",
+//         defaultLanguage: "en",
+//         localized: {
+//           title: "Transformers: Rise of Unicron - New Official Teaser",
+//           description:
+//             '"Whenever you look to the stars, think of one of them... as my soul".\n-Optimus Prime.\n\nWe\'re going to miss you, Peter. \n\n\n\n► SUBSCRIBE to the Rise of Unicron channel to get notified when new videos are posted: @transformersriseofunicron \n\n► SUBSCRIBE to the Manolikas Studios channel for bonus content regarding the fan-film: @manolikasstudios \n\nFollow us on social media to get the latest news and announcements regarding the Transformers: Rise of Unicron fan-film.\n\nInstagram (RoU): https://www.instagram.com/tf_rise_of_unicron.official\nInstagram (MS): https://www.instagram.com/manolikas_studios\nTikTok: https://www.tiktok.com/@tfriseofunicron',
+//         },
+//         defaultAudioLanguage: "en",
+//       },
+//       contentDetails: {
+//         duration: "PT1M2S",
+//         dimension: "2d",
+//         definition: "hd",
+//         caption: "false",
+//         licensedContent: false,
+//         contentRating: {},
+//         projection: "rectangular",
+//       },
+//       statistics: {
+//         viewCount: "3260736",
+//         likeCount: "62813",
+//         favoriteCount: "0",
+//         commentCount: "3688",
+//       },
+//     },
+//     {
+//       kind: "youtube#video",
+//       etag: "Cn5Qv51-CN-cveHNaLPz-APm7uc",
+//       id: "sg5NqBKZn20",
+//       snippet: {
+//         publishedAt: "2026-09-15T08:21:07Z",
+//         channelId: "UCMNEVbszv8ZyvSXoTn3yhpQ",
+//         title:
+//           "🔴LIVE | WARDOGS | COMMUNITY SERVER CASH BONUS | STRIKE TEAM NUT | GIMMICK X CLOAKZY | #BUNGULATE",
+//         description: "",
+//         thumbnails: {
+//           default: {
+//             url: "https://i.ytimg.com/vi/sg5NqBKZn20/default.jpg",
+//             width: 120,
+//             height: 90,
+//           },
+//           medium: {
+//             url: "https://i.ytimg.com/vi/sg5NqBKZn20/mqdefault.jpg",
+//             width: 320,
+//             height: 180,
+//           },
+//           high: {
+//             url: "https://i.ytimg.com/vi/sg5NqBKZn20/hqdefault.jpg",
+//             width: 480,
+//             height: 360,
+//           },
+//           standard: {
+//             url: "https://i.ytimg.com/vi/sg5NqBKZn20/sddefault.jpg",
+//             width: 640,
+//             height: 480,
+//           },
+//           maxres: {
+//             url: "https://i.ytimg.com/vi/sg5NqBKZn20/maxresdefault.jpg",
+//             width: 1280,
+//             height: 720,
+//           },
+//           fhd: {
+//             url: "https://i.ytimg.com/vi/sg5NqBKZn20/fhddefault.jpg",
+//             width: 1920,
+//             height: 1080,
+//           },
+//         },
+//         channelTitle: "TheBurntPeanut",
+//         tags: ["funny", "escape from tarkov", "tarkov"],
+//         categoryId: "20",
+//         liveBroadcastContent: "none",
+//         defaultLanguage: "en",
+//         localized: {
+//           title:
+//             "🔴LIVE | WARDOGS | COMMUNITY SERVER CASH BONUS | STRIKE TEAM NUT | GIMMICK X CLOAKZY | #BUNGULATE",
+//           description: "",
+//         },
+//         defaultAudioLanguage: "en-US",
+//       },
+//       contentDetails: {
+//         duration: "PT8H26M24S",
+//         dimension: "2d",
+//         definition: "hd",
+//         caption: "false",
+//         licensedContent: true,
+//         contentRating: {},
+//         projection: "rectangular",
+//       },
+//       statistics: {
+//         viewCount: "1100558",
+//         likeCount: "9417",
+//         favoriteCount: "0",
+//         commentCount: "91",
+//       },
+//     },
+//     {
+//       kind: "youtube#video",
+//       etag: "84t18zCd_6DnakqEMU6wi6uUg4g",
+//       id: "g4h_MHkBpts",
+//       snippet: {
+//         publishedAt: "2026-09-14T19:19:52Z",
+//         channelId: "UCvvSsThb7GCHzaMd2ulW72Q",
+//         title: 'YFG Fatso - "Am I Wrong " [Official Music Video]',
+//         description:
+//           'YFG Fatso - "Am I Wrong""\nDownload/Stream\n\nSubscribe for more content from YFG Fatso: https://YFGFatso.lnk.to/Youtube\n\nFollow YFG Fatso 🩸\nInstagram: https://YFGFatso.lnk.to/Instagram\nTikTok: https://YFGFatso.lnk.to/TikTok\nFacebook: https://YFGFatso.lnk.to/Facebook\nSnapchat: https://YFGFatso.lnk.to/Snapchat\n\nListen to YFG Fatso 🩸\nApple Music: https://YFGFatso.lnk.to/AppleMusic\nSpotify: https://YFGFatso.lnk.to/Spotify\nSoundcloud: https://YFGFatso.lnk.to/Soundcloud\nTIDAL: https://YFGFatso.lnk.to/TIDAL\nPandora: https://YFGFatso.lnk.to/Pandora\nAmazon Music: https://YFGFatso.lnk.to/AmazonMusic\n\nThe Official Youtube Channel of YFG Fatso. Subscribe for the latest music videos, performances, and more.\n\n#YFGFatso',
+//         thumbnails: {
+//           default: {
+//             url: "https://i.ytimg.com/vi/g4h_MHkBpts/default.jpg",
+//             width: 120,
+//             height: 90,
+//           },
+//           medium: {
+//             url: "https://i.ytimg.com/vi/g4h_MHkBpts/mqdefault.jpg",
+//             width: 320,
+//             height: 180,
+//           },
+//           high: {
+//             url: "https://i.ytimg.com/vi/g4h_MHkBpts/hqdefault.jpg",
+//             width: 480,
+//             height: 360,
+//           },
+//           standard: {
+//             url: "https://i.ytimg.com/vi/g4h_MHkBpts/sddefault.jpg",
+//             width: 640,
+//             height: 480,
+//           },
+//           maxres: {
+//             url: "https://i.ytimg.com/vi/g4h_MHkBpts/maxresdefault.jpg",
+//             width: 1280,
+//             height: 720,
+//           },
+//         },
+//         channelTitle: "YFG Fatso",
+//         categoryId: "22",
+//         liveBroadcastContent: "none",
+//         defaultLanguage: "en",
+//         localized: {
+//           title: 'YFG Fatso - "Am I Wrong " [Official Music Video]',
+//           description:
+//             'YFG Fatso - "Am I Wrong""\nDownload/Stream\n\nSubscribe for more content from YFG Fatso: https://YFGFatso.lnk.to/Youtube\n\nFollow YFG Fatso 🩸\nInstagram: https://YFGFatso.lnk.to/Instagram\nTikTok: https://YFGFatso.lnk.to/TikTok\nFacebook: https://YFGFatso.lnk.to/Facebook\nSnapchat: https://YFGFatso.lnk.to/Snapchat\n\nListen to YFG Fatso 🩸\nApple Music: https://YFGFatso.lnk.to/AppleMusic\nSpotify: https://YFGFatso.lnk.to/Spotify\nSoundcloud: https://YFGFatso.lnk.to/Soundcloud\nTIDAL: https://YFGFatso.lnk.to/TIDAL\nPandora: https://YFGFatso.lnk.to/Pandora\nAmazon Music: https://YFGFatso.lnk.to/AmazonMusic\n\nThe Official Youtube Channel of YFG Fatso. Subscribe for the latest music videos, performances, and more.\n\n#YFGFatso',
+//         },
+//         defaultAudioLanguage: "en",
+//       },
+//       contentDetails: {
+//         duration: "PT2M47S",
+//         dimension: "2d",
+//         definition: "hd",
+//         caption: "false",
+//         licensedContent: false,
+//         contentRating: {},
+//         projection: "rectangular",
+//       },
+//       statistics: {
+//         viewCount: "285466",
+//         likeCount: "16432",
+//         favoriteCount: "0",
+//         commentCount: "1297",
+//       },
+//     },
+//     {
+//       kind: "youtube#video",
+//       etag: "HZPzsX6bHHnbyV_b90BeDGMbZhY",
+//       id: "ZBgghO3V5k8",
+//       snippet: {
+//         publishedAt: "2026-09-14T19:30:34Z",
+//         channelId: "UCDiFRMQWpcp8_KD4vwIVicw",
+//         title: "Lanterns Episode 6 Trailer Breakdown & Easter Eggs",
+//         description:
+//           "Lanterns Episode 6 Trailer. Guy Gardner Becomes Green Lantern, What Happened To Hal Jordan, John Stewart, Sinestro, Blackest Night & Lanterns Episode 6 ► https://bit.ly/AwesomeSubscribe\nLanterns Episode 5 https://www.youtube.com/watch?v=bR8O04HCUD4&list=PLOIeYdZ3QczxQXxyV_2D8kuEs_QsuQIyJ&index=1&pp=iAQB0gcJCSQMAYcqIYzvsAgC\nThe New DCU Batman https://www.youtube.com/watch?v=FMdL1T4k_Is&list=PLOIeYdZ3QczwCLH9RIm-7ui56ameRYmdQ&index=1&pp=iAQBsAgC\nAvengers Doomsday Opening Scene https://www.youtube.com/watch?v=Yi113sBCLDs&list=PLOIeYdZ3QczwWT3yd94Xc6n-ooI85uV_u&index=9&pp=iAQBsAgC\nAvengers Doomsday Trailer https://www.youtube.com/watch?v=DFGkcteQgAg&list=PLOIeYdZ3QczwWT3yd94Xc6n-ooI85uV_u&index=1&pp=iAQBsAgC\nSpider-Man Noir Ending Explained https://www.youtube.com/watch?v=XDXx8adYDSI&list=PLOIeYdZ3QczwRWhE_S97dlLSCo8F-x_o0&index=27&pp=iAQBsAgC\nX-Men 2028 Teaser https://www.youtube.com/watch?v=TBSPL-P-LCs&list=PLOIeYdZ3QczwWT3yd94Xc6n-ooI85uV_u&index=2&pp=iAQBsAgC\nSpider-Man Brand New Day Post Credit Scene https://www.youtube.com/watch?v=WOfZwL4NKFE&list=PLOIeYdZ3QczwWT3yd94Xc6n-ooI85uV_u&index=1&pp=iAQBsAgC\nEmergency Awesome New Videos https://www.youtube.com/watch?v=FeOfhzu7ZdY&list=PLOIeYdZ3QczxQXxyV_2D8kuEs_QsuQIyJ&index=7\n\nCovering New Green Lantern Lanterns Episode 6 Trailer Breakdown and Easter Eggs. What Really Happened To Hal Jordan, How Guy Gardner Becomes Green Lantern, where Guy Gardner's Green Lantern Ring Comes From. Hal Jordan vs John Stewart Ending, Why John Stewart Rejects The Green Lantern Corps. Zoe Manhunter Ending Explained. Why Zoe Is the Manhunter, Ending Explained, Sinestro Explains The Yellow Lantern Power of Fear. Hal Jordan and Sinestro's Master Plan. Why The Guardians of OA are lying. Yellow Lantern Corps, the prophecy of Blackest Night and the War of Light. What happened to Sinestro, why Lanterns is setting up the Manhunters and the secret history of the Guardians of OA and the other emotional spectrum like yellow lanterns, red lanterns and more. How Guy Gardner Got His Green Lantern Ring. Lanterns Episode 7 and beyond.\n\nNew Episodes, Hal Jordan vs Sinestro. Lanterns Season 1, story and plot, how it connects to the Superman 2 Man of Tomorrow Movie and other upcoming DC Movies. Manhunters Explained. Wider ramifications for future DCU Movies. \n\nJames Gunn DC Movies New Justice League Announcement, Canceled DC Movies and TV Shows recently. Zack Snyder and James Gunn meeting. Superman 2, Green Lantern HBO First Look, Teen Titans Movie announcement. The new Batman and other new DC movies & tv shows.\n\nLanterns is supposed to run for multiple seasons, and help to build out the cosmic side of the DCU like the Supergirl Movie and other future space based dc movies and tv shows. There will be other major DC characters cameo scenes on the show, Nathan Fillion Guy Gardner, other green lanterns, Oa and the Oans. In addition to Sinestro and  other comic book characters.\n\nDavid Corenswet Superman, Rachel Brosnahan Lois Lane Explained. Batman Brave and the Bold Teaser and the New Batman will be announced next year. Batman Brave and the Bold Teaser and the New Batman will be announced next year. Nathan Fillion Green Lantern, Hawkgirl, Mr Terrific and more new Justice League characters. Why The New Justice League is based more on the Animated Justice League Team.\n\nHenry Cavill Superman Future Plans, Deleted Scenes. Lots more DC and Marvel Trailers coming, Avengers Doomsday Trailer, X-Men 2028 Teasers and More Spider-Man videos soon too!\n\nMy Full Lanterns Episode 6 video will post next sun!\n\nVideo Game Youtube Channel https://youtube.com/charliestreams\nTwitch Channel https://twitch.tv/emergencyawesome\nTwitter  https://x.com/awesomemergency\nFacebook  https://facebook.com/emergencyawesome\nInstagram  https://instagram.com/emergencyawesome\nTumblr  https://robotchallenger.com\nMy Website https://emergencyawesome.com\nGoogle Proflie https://profile.google.com/@emergencyawesome\n\n:: Video Playlists For Shows ::\n\nNew Emergency Awesome Videos https://www.youtube.com/playlist?list=PLOIeYdZ3QczxQXxyV_2D8kuEs_QsuQIyJ\nHouse of The Dragon Episodes https://www.youtube.com/playlist?list=PLOIeYdZ3QczxqJeNeCsF_ghizcTS9nM4X\nLoki Episodes https://www.youtube.com/playlist?list=PLOIeYdZ3Qczy8mUNqHU-35xtTd-JpJU3l\nThe Mandalorian Episodes https://www.youtube.com/playlist?list=PLOIeYdZ3QczzsN78nOjS-ABHwKaB7KONW\nGame of Thrones Episodes https://www.youtube.com/playlist?list=SPOIeYdZ3QczxGuSDE8NtOuthqbKFChC0q\nMarvel Movies and Avengers https://www.youtube.com/playlist?list=PLOIeYdZ3QczwWT3yd94Xc6n-ooI85uV_u\nSpider Man Videos https://www.youtube.com/playlist?list=PLOIeYdZ3QczzbRhRiGhj3-MaZ_24kadOy\nThe Batman and DC Movies https://www.youtube.com/playlist?list=PLOIeYdZ3QczwCLH9RIm-7ui56ameRYmdQ\nJustice League Snyder Cut Videos https://www.youtube.com/playlist?list=PLOIeYdZ3QczwCLH9RIm-7ui56ameRYmdQ\nStar Wars Movies https://www.youtube.com/playlist?list=PLOIeYdZ3QczztMg8cT1WS0P8ATv-MhUEJ\n\nTHANKS FOR WATCHING!!",
+//         thumbnails: {
+//           default: {
+//             url: "https://i.ytimg.com/vi/ZBgghO3V5k8/default.jpg",
+//             width: 120,
+//             height: 90,
+//           },
+//           medium: {
+//             url: "https://i.ytimg.com/vi/ZBgghO3V5k8/mqdefault.jpg",
+//             width: 320,
+//             height: 180,
+//           },
+//           high: {
+//             url: "https://i.ytimg.com/vi/ZBgghO3V5k8/hqdefault.jpg",
+//             width: 480,
+//             height: 360,
+//           },
+//           standard: {
+//             url: "https://i.ytimg.com/vi/ZBgghO3V5k8/sddefault.jpg",
+//             width: 640,
+//             height: 480,
+//           },
+//           maxres: {
+//             url: "https://i.ytimg.com/vi/ZBgghO3V5k8/maxresdefault.jpg",
+//             width: 1280,
+//             height: 720,
+//           },
+//           fhd: {
+//             url: "https://i.ytimg.com/vi/ZBgghO3V5k8/fhddefault.jpg",
+//             width: 1920,
+//             height: 1080,
+//           },
+//         },
+//         channelTitle: "Emergency Awesome",
+//         categoryId: "24",
+//         liveBroadcastContent: "none",
+//         defaultLanguage: "en",
+//         localized: {
+//           title: "Lanterns Episode 6 Trailer Breakdown & Easter Eggs",
+//           description:
+//             "Lanterns Episode 6 Trailer. Guy Gardner Becomes Green Lantern, What Happened To Hal Jordan, John Stewart, Sinestro, Blackest Night & Lanterns Episode 6 ► https://bit.ly/AwesomeSubscribe\nLanterns Episode 5 https://www.youtube.com/watch?v=bR8O04HCUD4&list=PLOIeYdZ3QczxQXxyV_2D8kuEs_QsuQIyJ&index=1&pp=iAQB0gcJCSQMAYcqIYzvsAgC\nThe New DCU Batman https://www.youtube.com/watch?v=FMdL1T4k_Is&list=PLOIeYdZ3QczwCLH9RIm-7ui56ameRYmdQ&index=1&pp=iAQBsAgC\nAvengers Doomsday Opening Scene https://www.youtube.com/watch?v=Yi113sBCLDs&list=PLOIeYdZ3QczwWT3yd94Xc6n-ooI85uV_u&index=9&pp=iAQBsAgC\nAvengers Doomsday Trailer https://www.youtube.com/watch?v=DFGkcteQgAg&list=PLOIeYdZ3QczwWT3yd94Xc6n-ooI85uV_u&index=1&pp=iAQBsAgC\nSpider-Man Noir Ending Explained https://www.youtube.com/watch?v=XDXx8adYDSI&list=PLOIeYdZ3QczwRWhE_S97dlLSCo8F-x_o0&index=27&pp=iAQBsAgC\nX-Men 2028 Teaser https://www.youtube.com/watch?v=TBSPL-P-LCs&list=PLOIeYdZ3QczwWT3yd94Xc6n-ooI85uV_u&index=2&pp=iAQBsAgC\nSpider-Man Brand New Day Post Credit Scene https://www.youtube.com/watch?v=WOfZwL4NKFE&list=PLOIeYdZ3QczwWT3yd94Xc6n-ooI85uV_u&index=1&pp=iAQBsAgC\nEmergency Awesome New Videos https://www.youtube.com/watch?v=FeOfhzu7ZdY&list=PLOIeYdZ3QczxQXxyV_2D8kuEs_QsuQIyJ&index=7\n\nCovering New Green Lantern Lanterns Episode 6 Trailer Breakdown and Easter Eggs. What Really Happened To Hal Jordan, How Guy Gardner Becomes Green Lantern, where Guy Gardner's Green Lantern Ring Comes From. Hal Jordan vs John Stewart Ending, Why John Stewart Rejects The Green Lantern Corps. Zoe Manhunter Ending Explained. Why Zoe Is the Manhunter, Ending Explained, Sinestro Explains The Yellow Lantern Power of Fear. Hal Jordan and Sinestro's Master Plan. Why The Guardians of OA are lying. Yellow Lantern Corps, the prophecy of Blackest Night and the War of Light. What happened to Sinestro, why Lanterns is setting up the Manhunters and the secret history of the Guardians of OA and the other emotional spectrum like yellow lanterns, red lanterns and more. How Guy Gardner Got His Green Lantern Ring. Lanterns Episode 7 and beyond.\n\nNew Episodes, Hal Jordan vs Sinestro. Lanterns Season 1, story and plot, how it connects to the Superman 2 Man of Tomorrow Movie and other upcoming DC Movies. Manhunters Explained. Wider ramifications for future DCU Movies. \n\nJames Gunn DC Movies New Justice League Announcement, Canceled DC Movies and TV Shows recently. Zack Snyder and James Gunn meeting. Superman 2, Green Lantern HBO First Look, Teen Titans Movie announcement. The new Batman and other new DC movies & tv shows.\n\nLanterns is supposed to run for multiple seasons, and help to build out the cosmic side of the DCU like the Supergirl Movie and other future space based dc movies and tv shows. There will be other major DC characters cameo scenes on the show, Nathan Fillion Guy Gardner, other green lanterns, Oa and the Oans. In addition to Sinestro and  other comic book characters.\n\nDavid Corenswet Superman, Rachel Brosnahan Lois Lane Explained. Batman Brave and the Bold Teaser and the New Batman will be announced next year. Batman Brave and the Bold Teaser and the New Batman will be announced next year. Nathan Fillion Green Lantern, Hawkgirl, Mr Terrific and more new Justice League characters. Why The New Justice League is based more on the Animated Justice League Team.\n\nHenry Cavill Superman Future Plans, Deleted Scenes. Lots more DC and Marvel Trailers coming, Avengers Doomsday Trailer, X-Men 2028 Teasers and More Spider-Man videos soon too!\n\nMy Full Lanterns Episode 6 video will post next sun!\n\nVideo Game Youtube Channel https://youtube.com/charliestreams\nTwitch Channel https://twitch.tv/emergencyawesome\nTwitter  https://x.com/awesomemergency\nFacebook  https://facebook.com/emergencyawesome\nInstagram  https://instagram.com/emergencyawesome\nTumblr  https://robotchallenger.com\nMy Website https://emergencyawesome.com\nGoogle Proflie https://profile.google.com/@emergencyawesome\n\n:: Video Playlists For Shows ::\n\nNew Emergency Awesome Videos https://www.youtube.com/playlist?list=PLOIeYdZ3QczxQXxyV_2D8kuEs_QsuQIyJ\nHouse of The Dragon Episodes https://www.youtube.com/playlist?list=PLOIeYdZ3QczxqJeNeCsF_ghizcTS9nM4X\nLoki Episodes https://www.youtube.com/playlist?list=PLOIeYdZ3Qczy8mUNqHU-35xtTd-JpJU3l\nThe Mandalorian Episodes https://www.youtube.com/playlist?list=PLOIeYdZ3QczzsN78nOjS-ABHwKaB7KONW\nGame of Thrones Episodes https://www.youtube.com/playlist?list=SPOIeYdZ3QczxGuSDE8NtOuthqbKFChC0q\nMarvel Movies and Avengers https://www.youtube.com/playlist?list=PLOIeYdZ3QczwWT3yd94Xc6n-ooI85uV_u\nSpider Man Videos https://www.youtube.com/playlist?list=PLOIeYdZ3QczzbRhRiGhj3-MaZ_24kadOy\nThe Batman and DC Movies https://www.youtube.com/playlist?list=PLOIeYdZ3QczwCLH9RIm-7ui56ameRYmdQ\nJustice League Snyder Cut Videos https://www.youtube.com/playlist?list=PLOIeYdZ3QczwCLH9RIm-7ui56ameRYmdQ\nStar Wars Movies https://www.youtube.com/playlist?list=PLOIeYdZ3QczztMg8cT1WS0P8ATv-MhUEJ\n\nTHANKS FOR WATCHING!!",
+//         },
+//         defaultAudioLanguage: "en",
+//       },
+//       contentDetails: {
+//         duration: "PT15M23S",
+//         dimension: "2d",
+//         definition: "hd",
+//         caption: "true",
+//         licensedContent: true,
+//         contentRating: {},
+//         projection: "rectangular",
+//       },
+//       statistics: {
+//         viewCount: "523463",
+//         likeCount: "5986",
+//         favoriteCount: "0",
+//         commentCount: "848",
+//       },
+//     },
+//   ],
+//   nextPageToken: "CAUQAA",
+//   pageInfo: {
+//     totalResults: 200,
+//     resultsPerPage: 5,
+//   },
+// };
